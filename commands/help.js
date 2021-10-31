@@ -8,6 +8,7 @@ module.exports = class {
 
     async run(client, message, args) {
         try{
+                    try{
             if(!args[1]) {
               
             let helpEmbed = new RichEmbed()
@@ -17,18 +18,20 @@ module.exports = class {
           
             
             **q.help**    --    Shows this message
-            **q.info**    --         Get Information about Xenon
-            **q.invite**    --    Invite Xenon
+            **q.info**    --         Get Information about Cjyn
+            **q.invite**    --    Invite Cjyn
             **q.leave**    --       Let the bot leave
             **q.ping**    --       Pong
             **q.nuke**    --     Nukes a channel. 
+            **q.whois**    --     Shows a users info. 
+            **q.serverinfo**     --     Shows a servers info. 
           
           
             
             `)
             .setFooter(`Use \`**q.help [command]\` for more info on a command.
             You can also use \`**q.help [category]\` for more info on a category.`)
-            .setColor("#5DBCD2")
+            .setColor("#00ff00")
             message.channel.send(helpEmbed)
               return;
             }
@@ -36,7 +39,6 @@ module.exports = class {
             if(args[1] === "backup") {
                 const embed = new RichEmbed()
                     .setTitle(`**q.backup**
-
                   __**Commands**__
 `)
                     .setDescription(`
@@ -49,7 +51,7 @@ module.exports = class {
                     .addBlankField()
                     .setFooter(`Use \`q.help [command]\` for more info on a command.
 You can also use \`q.help [category]\` for more info on a category.`)
-                    .setColor("#5DBCD2")
+                    .setColor("#00ff00")
                 message.channel.send(embed)
             }
 
@@ -60,7 +62,7 @@ You can also use \`q.help [category]\` for more info on a category.`)
                     .addBlankField()
                     .setFooter(`Use \`q.help [command]\` for more info on a command.
 You can also use \`q.help [category]\` for more info on a category.`)
-                    .setColor("#5DBCD2")
+                    .setColor("#00ff00")
                     message.channel.send(showsThisMessageEmbed);
             }
 
@@ -71,7 +73,7 @@ You can also use \`q.help [category]\` for more info on a category.`)
                     .addBlankField()
                     .setFooter(`Use \`q.help [command]\` for more info on a command.
 You can also use \`q.help [category]\` for more info on a category.`)
-                    .setColor("#5DBCD2")
+                    .setColor("#00ff00")
                     message.channel.send(infoEmbed);
             }
 
@@ -82,7 +84,7 @@ You can also use \`q.help [category]\` for more info on a category.`)
                     .addBlankField()
                     .setFooter(`Use \`q.help [command]\` for more info on a command.
 You can also use \`q.help [category]\` for more info on a category.`)
-                    .setColor("#5DBCD2")
+                    .setColor("#00ff00")
                     message.channel.send(inviteEmbed)
             }
 
@@ -93,7 +95,7 @@ You can also use \`q.help [category]\` for more info on a category.`)
                     .addBlankField()
                     .setFooter(`Use \`q.help [command]\` for more info on a command.
 You can also use \`q.help [category]\` for more info on a category.`)
-                    .setColor("#5DBCD2")
+                    .setColor("#00ff00")
                 message.channel.send(inviteEmbed)
             }
 
@@ -104,10 +106,20 @@ You can also use \`q.help [category]\` for more info on a category.`)
                     .addBlankField()
                     .setFooter(`Use \`q.help [command]\` for more info on a command.
 You can also use \`q.help [category]\` for more info on a category.`)
-                    .setColor("#5DBCD2")
+                    .setColor("#00ff00")
                 message.channel.send(inviteEmbed)
             }
 
+            if (args[1] === "nuke") {
+                let inviteEmbed = new RichEmbed()
+                    .setTitle("**q.nuke**")
+                    .setDescription("Make the bot nuke a channel. Required permissions [ADMINISTRATOR]")
+                    .addBlankField()
+                    .setFooter(`Use \`q.help [command]\` for more info on a command.
+You can also use \`q.help [category]\` for more info on a category.`)
+                    .setColor("#00ff00")
+                message.channel.send(inviteEmbed)
+            }
 
         }catch(e) {
             throw e;
